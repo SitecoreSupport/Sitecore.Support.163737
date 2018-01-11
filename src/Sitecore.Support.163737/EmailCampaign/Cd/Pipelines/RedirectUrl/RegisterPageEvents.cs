@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web;
-using Sitecore.Analytics;
-using Sitecore.Diagnostics;
-using Sitecore.EmailCampaign.Cd.EmailEvents;
-using Sitecore.EmailCampaign.Cd.Pipelines.RedirectUrl;
-using Sitecore.Modules.EmailCampaign.Factories;
-
-namespace Sitecore.Support.EmailCampaign.Cd.Pipelines.RedirectUrl
+﻿namespace Sitecore.Support.EmailCampaign.Cd.Pipelines.RedirectUrl
 {
+    using System.Text.RegularExpressions;
+    using Sitecore.Analytics;
+    using Sitecore.Diagnostics;
+    using Sitecore.EmailCampaign.Cd.EmailEvents;
+    using Sitecore.EmailCampaign.Cd.Pipelines.RedirectUrl;
+    using Sitecore.Modules.EmailCampaign.Factories;
+
     public class RegisterPageEvents
     {
         private readonly EcmFactory _factory;
