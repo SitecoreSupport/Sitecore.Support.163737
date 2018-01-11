@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using Sitecore.Analytics;
 using Sitecore.Diagnostics;
 using Sitecore.EmailCampaign.Cd.EmailEvents;
 using Sitecore.EmailCampaign.Cd.Pipelines.RedirectUrl;
@@ -59,6 +60,7 @@ namespace Sitecore.Support.EmailCampaign.Cd.Pipelines.RedirectUrl
             }
             else
             {
+                Tracker.Current.CurrentPage.SetUrl(redirectUrl);
                 this._factory.Gateways.AnalyticsGateway.RegisterCurrentPageEvent(eventName, eventText);
             }
         }
