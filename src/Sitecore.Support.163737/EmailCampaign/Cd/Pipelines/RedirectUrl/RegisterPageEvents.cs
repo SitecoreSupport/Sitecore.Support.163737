@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Support.EmailCampaign.Cd.Pipelines.RedirectUrl
 {
+  using Sitecore.Analytics;
   using System.Collections;
   using System.Text.RegularExpressions;
   using Newtonsoft.Json;
@@ -73,6 +74,7 @@
       }
       else if (!args.IsInternalReference)
       {
+        Tracker.Current.CurrentPage.SetUrl(args.RedirectToUrl.ToString());
         Sitecore.Analytics.Data.PageEventData pageEventData = new Sitecore.Analytics.Data.PageEventData(data);
         this._factory.Gateways.AnalyticsGateway.RegisterCurrentPageEvent(pageEventData);
       }
